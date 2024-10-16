@@ -35,6 +35,26 @@ This virtualization tool is located within the device-driver stack on the operat
 - Schedule regular backups to avoid data loss.
 - Consider combining RAID with LVM for flexible and efficient storage management.
 
+- ## Additional Resources
+
+- [RAID on Linux Documentation](https://www.kernel.org/doc/Documentation/md.txt)
+- [LVM on Linux Documentation](https://www.tldp.org/HOWTO/LVM-HOWTO/)
+- [Understanding RAID Levels](https://www.ibm.com/docs/en/SSLTBW_1.1.0/com.ibm.storage.ssltbw.doc/sra-raid.html)
+- [What is Raid Array,RAID 0, 1, 5, 10. Advantages and Disadvantages of RAID 0. 1. 5 10](https://www.youtube.com/watch?v=MZfRxjEGRj4&t=2s)
+
+- ## LVM Commands
+
+- Create a physical volume:
+  ```bash
+  pvcreate /dev/sdb
+
+To create a volume group 
+vgcreate my_volume_group /dev/sdb
+
+To create a logical volume
+lvcreate -n my_logical_volume -L 10G my_volume_group
+  
+
 ## Conclusion
 
 Using RAID and LVM together can significantly enhance the reliability and manageability of your storage solutions in Linux. With the right configurations, you can optimize performance, improve redundancy, and ensure that your data is always accessible.
